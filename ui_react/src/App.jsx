@@ -1,23 +1,26 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
-import Contact from './pages/Contact'
+const Contact =lazy (()=> import('./pages/Contact'))
 import Login from './pages/Auth/Login'
 import Register from './pages/Auth/Register'
-import Weblayouts from './layouts/Weblayouts'
+import Weblayout from './layouts/Weblayout'
+
 
 const App = () => {
   return (
     <>
      <BrowserRouter>
+     <Suspense fallback='Loading..'>
      <Routes>
-      <Route> 
+      <Route element={<Weblayout/>}> 
       <Route path='/' element={<Home/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register/>}/>
       </Route>
      </Routes>
+     </Suspense>
      </BrowserRouter>
     </>
   )

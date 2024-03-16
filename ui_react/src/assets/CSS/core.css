@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.active{
+    color:blue;
+    font-weight: 500;
+    border-bottom: 3px solid rgb(232, 44, 232); 
+    transition: border-bottom 0.5s ease-in-out; 
+    padding-bottom: 5px;
+    transform: scaleX(1); 
+}
+
