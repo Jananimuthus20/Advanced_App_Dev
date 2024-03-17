@@ -15,7 +15,7 @@ const Register = () => {
         password: '',
         confirmPassword: ''
       });
-    
+
       const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -23,6 +23,23 @@ const Register = () => {
           [name]: value
         });
       };
+
+      const [errors, setErrors] = useState({
+        email: '',
+        password: '',
+        confirmPassword: '',
+        phoneNumber:''
+      });
+
+   
+        const validateEmail = (email) => {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+      };
+      const validatePasswordStrength = (password) => {
+        // Check if the password meets your strength criteria (e.g., length)
+        return password.length >= 8; // You can add more criteria if needed
+    };
 
       const handleSubmit = (e) => {
         e.preventDefault();
@@ -33,11 +50,33 @@ const Register = () => {
             return;
           }
         }
-        // Proceed with form submission if all fields are filled
-        console.log(formData);
-        toast.success("YAY");
-        // You can add your form submission logic here
-      };
+         // Proceed with form submission if all fields are filled
+    if (!validateEmail(formData.email)) {
+      setErrors({ ...errors, email: 'Invalid email format' });
+      return;
+    }
+    
+    // Validate password strength
+    if (!validatePasswordStrength(formData.password)) {
+      setErrors({ ...errors, password: 'Password must be at least 8 characters long' });
+      return;
+    }
+    if (formData.password !== formData.confirmPassword) {
+      setErrors({ ...errors, confirmPassword: 'Passwords do not match' });
+      return;
+    }
+    if(formData.phoneNumber.length<10 ||formData.phoneNumber.length>12 )
+    {
+      setErrors({ ...errors, phoneNumber: 'Invalid phone Number' });
+      return;
+    }
+    // Clear any previous validation errors
+    setErrors({ email: '', password: '' ,confirmPassword: ''});
+
+    console.log(formData);
+    toast.success("Successfully registered!");
+    // You can add your form submission logic here
+   };
 
      
 
@@ -49,7 +88,7 @@ const Register = () => {
       
       <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div class=" space-y-2 md:space-y-5 sm:p-8">
-              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              <h1 class="text-center text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                   Sign Up
               </h1>
               <form class="space-y-4 md:space-y-6" onSubmit={handleSubmit} >
@@ -71,6 +110,7 @@ const Register = () => {
                        placeholder='Enter your email'
                        onChange={handleChange}
                        required=""/>
+                       {errors.email && <p className="text-red-600">{errors.email}</p>}
                   </div>
                   <div>
                       <input type="phoneNumber" 
@@ -80,6 +120,7 @@ const Register = () => {
                        placeholder='Enter your phone number'
                        onChange={handleChange}
                        required=""/>
+                       {errors.phoneNumber && <p className="text-red-600">{errors.phoneNumber}</p>}
                   </div>
                   
                   <div>
@@ -89,6 +130,7 @@ const Register = () => {
                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""
                        placeholder='Enter your Password'
                        onChange={handleChange}/>
+                       {errors.password && <p className="text-red-600">{errors.password}</p>}
                   </div>
                   <div>                     
                       <input type="password"
@@ -97,6 +139,7 @@ const Register = () => {
                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""
                        placeholder='Enter Confirm Password'
                        onChange={handleChange}/>
+                       {errors.confirmPassword && <p className="text-red-600">{errors.confirmPassword}</p>}
                   </div>
                   <div class="flex items-center justify-between">
                       <div class="flex items-start">

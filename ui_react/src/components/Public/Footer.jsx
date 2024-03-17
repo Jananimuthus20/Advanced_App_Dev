@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import corpify_logo from '../../assets/Images/corpify_logo.png'
 
 const Footer = () => {
   return (
@@ -6,16 +8,14 @@ const Footer = () => {
       
 
 <footer class="bg-blue dark:bg-gray-900">
-    <div class="mx-auto w-full p-4 py-6 lg:py-8 bg-blue-200">
+    <div class="mx-auto w-full p-4 py-6 lg:py-8 bg-blue-100">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
               <a href="https://flowbite.com/" class="flex items-center">
-                  <img src="https://media.istockphoto.com/id/1345681613/vector/creative-people-logo-vector-illustration-design-editable-resizable-eps-10.jpg?s=612x612&w=0&k=20&c=9XUHICA1ljbxBcLw8ERp0kDDxLNQ8Bp2yR4aUSS6SBs=" class="h-20 me-3" alt="Techie Logo" />
-                  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Techie</span>
+                  <img src={corpify_logo} class="h-20 me-3" alt="Corpify Logo" />
               </a>
           </div>
-          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-             
+          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3"> 
               <div>
                   <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
                   <ul class="text-gray-500 dark:text-gray-400 font-medium">
@@ -45,10 +45,7 @@ const Footer = () => {
                           <a href="#" class="hover:underline">Privacy Policy</a>
                       </li>
                       <li class="mb-4">
-                          <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-                      </li>
-                      <li>
-                          <a href="#" class="hover:underline">FAQ</a>
+                      <Link to="/terms" class="hover:underline">Terms &amp; Conditions</Link>
                       </li>
                   </ul>
               </div>
