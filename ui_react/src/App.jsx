@@ -13,6 +13,15 @@ import AdminAddEvent from './pages/Admin/AdminAddEvent'
 import AdminAllEvents from './pages/Admin/AdminAllEvents'
 import AdminBookings from './pages/Admin/AdminBookings'
 import AdminSettings from './pages/Admin/AdminSettings'
+import AdminAllPayments from './pages/Admin/AdminAllPayments'
+import AdminAllUsers from './pages/Admin/AdminAllUsers'
+
+import UserLayout from './layouts/UserLayout'
+import UserDashboard from './pages/User/UserDashboard'
+import UserEvents from './pages/User/UserEvents'
+import UserBookings from './pages/User/UserBookings'
+import UserPayments from './pages/User/UserPayments'
+import UserProfile from './pages/User/UserProfile'
 
 
 const App = () => {
@@ -34,7 +43,17 @@ const App = () => {
         <Route path='/admin/addEvent' element={<AdminAddEvent/>}/>
         <Route path='/admin/allEvents' element={<AdminAllEvents/>}/>
         <Route path='/admin/bookings' element={<AdminBookings/>}/>
+        <Route path='/admin/payments' element={<AdminAllPayments/>}/>
         <Route path='/admin/settings' element={<AdminSettings/>}/>
+        <Route path='/admin/users' element={<AdminAllUsers/>}/>
+      </Route>
+
+      <Route element={<UserLayout/>}>
+      <Route path='/user/dashboard' element={<UserDashboard/>}/>
+      <Route path='/user/events' element={<UserEvents/>}/>
+      <Route path='/user/bookings' element={<UserBookings/>}/>
+      <Route path='/user/payments' element={<UserPayments/>}/>
+      <Route path='/user/profile' element={<UserProfile/>}/>
       </Route>
 
      </Routes>

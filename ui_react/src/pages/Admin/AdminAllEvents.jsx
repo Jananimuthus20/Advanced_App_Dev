@@ -9,6 +9,9 @@ const AdminAllEvents = () => {
         <thead class="text-xs text-white uppercase bg-blue-600 dark:text-white">
             <tr>
                 <th scope="col" class="px-6 py-3">
+                    Event ID
+                </th>
+                <th scope="col" class="px-6 py-3">
                     Event Type
                 </th>
                 <th scope="col" class="px-6 py-3">
@@ -31,6 +34,9 @@ const AdminAllEvents = () => {
         <tbody>
             <tr class="bg-white-500 border-b border-blue-400">
                 <th scope="row" class="px-6 py-4 font-medium text-black">
+                    1
+                </th>
+                <th scope="row" class="px-6 py-4 font-medium text-black">
                     Conference
                 </th>
                 <td class="px-6 py-4">
@@ -51,6 +57,9 @@ const AdminAllEvents = () => {
                 </td>
             </tr>
             <tr class="bg-white-500 border-b border-blue-400">
+                <th scope="row" class="px-6 py-4 font-medium text-black">
+                    2
+                </th>
                 <th scope="row" class="px-6 py-4 font-medium text-black">
                     Product Launch
                 </th>
@@ -73,6 +82,9 @@ const AdminAllEvents = () => {
             </tr>
             <tr class="bg-white-500 border-b border-blue-400">
                 <th scope="row" class="px-6 py-4 font-medium text-black">
+                    3
+                </th>
+                <th scope="row" class="px-6 py-4 font-medium text-black">
                     Shareholders Meeting
                 </th>
                 <td class="px-6 py-4">
@@ -94,6 +106,9 @@ const AdminAllEvents = () => {
             </tr>
             <tr class="bg-white-500 border-b border-blue-400">
                 <th scope="row" class="px-6 py-4 font-medium text-black">
+                    4
+                </th>
+                <th scope="row" class="px-6 py-4 font-medium text-black">
                     Company Milestones
                 </th>
                 <td class="px-6 py-4">
@@ -114,6 +129,9 @@ const AdminAllEvents = () => {
                 </td>
             </tr>
             <tr class="bg-white-500 border-b border-blue-400">
+                <th scope="row" class="px-6 py-4 font-medium text-black">
+                   5
+                </th>
                 <th scope="row" class="px-6 py-4 font-medium text-black">
                    Trade shows
                 </th>

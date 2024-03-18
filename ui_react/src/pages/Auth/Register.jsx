@@ -75,6 +75,7 @@ const Register = () => {
 
     console.log(formData);
     toast.success("Successfully registered!");
+    navigate('/login');
     // You can add your form submission logic here
    };
 

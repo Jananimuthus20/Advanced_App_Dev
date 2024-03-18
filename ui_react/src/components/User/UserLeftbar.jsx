@@ -2,42 +2,30 @@ import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { LayoutDashboard, CreditCard, BookCheck, Cog, Mail, Users, Globe, IndianRupee, User, BookIcon, UserPlus2Icon, Plus } from 'lucide-react'
 
-const AdminLeftbar = () => {
-
+const UserLeftbar = () => {
     const navigate = useNavigate()
     const UserLinks = [
         {
             title: 'Dashboard',
-            path: '/admin/dashboard',
+            path: '/user/dashboard',
             icon: LayoutDashboard
         },
         {
-            title: 'Add Event',
-            path: '/admin/addEvent',
+            title: 'Events',
+            path: '/user/events',
             icon: Plus
         },
         {
-            title: 'All Events',
-            path: '/admin/allEvents',
+            title: 'My Bookings',
+            path: '/user/bookings',
             icon: BookCheck
         },
         {
-            title: 'All Bookings',
-            path: '/admin/bookings',
-            icon: BookIcon
-        },
-        {
-            title: 'All Payments',
-            path: '/admin/payments',
+            title: 'My Payments',
+            path: '/user/payments',
             icon: IndianRupee
         },
-        {
-            title: 'All Users',
-            path: '/admin/users',
-            icon: UserPlus2Icon
-        },
     ]
-    
   return (
     <div>
        <div className='w-full lg:w-[15vw] bg-blue-50/20 shadow-md shadow-blue-500 flex flex-col'>
@@ -61,4 +49,4 @@ const AdminLeftbar = () => {
   )
 }
 
-export default AdminLeftbar
+export default UserLeftbar
