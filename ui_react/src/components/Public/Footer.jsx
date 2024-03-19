@@ -8,7 +8,7 @@ const Footer = () => {
       
 
 <footer class="bg-blue dark:bg-gray-900">
-    <div class="mx-auto w-full p-4 py-6 lg:py-8 bg-blue-100">
+    <div class="mx-auto w-full p-4 py-6 lg:py-8 bg-white">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
               <a href="https://flowbite.com/" class="flex items-center">
@@ -41,9 +41,6 @@ const Footer = () => {
               <div>
                   <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help Desk</h2>
                   <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                      <li class="mb-4">
-                          <a href="#" class="hover:underline">Privacy Policy</a>
-                      </li>
                       <li class="mb-4">
                       <Link to="/terms" class="hover:underline">Terms &amp; Conditions</Link>
                       </li>

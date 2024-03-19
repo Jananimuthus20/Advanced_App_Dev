@@ -12,7 +12,6 @@ const AdminSettings = () => {
   
   return (
     <>
-       <h1 className="text-center mt-3">Admin Settings</h1>
       <div className="flex items-center justify-center h-[80%]">
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div className="flex flex-col items-center pb-10">

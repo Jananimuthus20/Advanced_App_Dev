@@ -1,6 +1,10 @@
 import React from 'react'
 import homebg from '../assets/Images/homebg.jpeg'
 import home_vectorimg from '../assets/Images/home_vectorimg.png'
+import homearrow_arrow from '../assets/Images/homeright_arrow.gif'
+import { Link } from 'react-router-dom';
+import homepoints_icon from '../assets/Images/homepoints_icon.png'
+import working_icon from '../assets/Images/working_icon.png'
 
 const Home = () => {
   return (
@@ -13,13 +17,14 @@ const Home = () => {
      <div className="flex flex-col justify-center items-start p-8 flex-1 mb-12 ml-4">
         <h1 className="text-4xl md:text-5xl font-medium mb-6 text-yellow-100 italic">Simplify Events with Corpify</h1>
         <p className="text-lg md:text-xl mb-8">Redefining event planning to deliver an effortless and elevated experience, revolutionizing the way events are organized and executed.</p>
-        <div className="flex">
-        <button className="bg-transparent border border-white text-white font-bold py-2 px-4 rounded mr-4 transition-colors duration-300 hover:bg-blue-100 hover:text-black">
-  Sign Up
-</button>
-<button className="bg-transparent border border-white text-white font-bold py-2 px-4 rounded transition-colors duration-300 hover:bg-blue-100 hover:text-black">
-  Login
-</button>
+        <div className="flex items-center ml-14">
+        <img src={homearrow_arrow} alt="Arrow" className=" ml-10 w-10 h-10 mr-8 " />
+        <Link to="/register" className="bg-transparent border border-white text-white font-bold py-2 px-4 rounded mr-4 transition-colors duration-300 hover:bg-blue-100 hover:text-black">
+              Sign Up
+            </Link>
+            <Link to="/login" className="bg-transparent border border-white text-white font-bold py-2 px-4 rounded transition-colors duration-300 hover:bg-blue-100 hover:text-black">
+              Login
+            </Link>
         </div>
       </div>
       {/* Right side vector image */}
@@ -59,8 +64,52 @@ const Home = () => {
           <p className="text-center">Organize offline and hybrid events with ease using Corpify.</p>
         </div>
       </div>
-<br/><br/> <br/><br/><br/><br/>
+<br/><br/> 
+
+ {/* How It Works Section */}
+    <h2 className="text-3xl font-semibold text-center">How Corpify Works</h2>
+    <br/>
+    <div className="bg-blue-200 py-12">
+<div className="flex items-center justify-center my-4">
+  <div className="flex items-center  mr-10 mt-[-90px]">
+    <img src={working_icon} alt="Working Icon" className="h-[80%] w-[80%] mb-12" />
+  </div>
+  <div className="grid grid-cols-1 gap-6 w-[40%] max-w-6xl mt-4">
+    {/* Step 1: Sign Up */}
+    <div className="bg-white rounded-lg shadow-md">
+      <div className="p-6">
+        <h3 className="text-2xl font-semibold mb-2">Step 1: Login/Sign Up</h3>
+        <p>Create an account to get started.</p>
       </div>
+    </div>
+    {/* Step 2: Create Event */}
+    <div className="bg-white rounded-lg shadow-md">
+      <div className="p-6">
+        <h3 className="text-2xl font-semibold mb-2">Step 2: Choose an Event</h3>
+        <p>Start choosing a suitable event.</p>
+      </div>
+    </div>
+    {/* Step 3: Invite Guests */}
+    <div className="bg-white rounded-lg shadow-md">
+      <div className="p-6">
+        <h3 className="text-2xl font-semibold mb-2">Step 3: proceed with booking</h3>
+        <p>Book your slots for conducting your meet</p>
+      </div>
+    </div>
+    {/* Step 4: Manage Event */}
+    <div className="bg-white rounded-lg shadow-md">
+      <div className="p-6">
+        <h3 className="text-2xl font-semibold mb-2">Step 4: Confirm slot</h3>
+        <p>Confirm your booking by proceeding with the payment</p>
+      </div>
+    </div>
+  </div>
+</div>
+      <br/><br/><br/>
+    </div>
+    <br/><br/><br/>
+    </div>
+    
   )
 }
 

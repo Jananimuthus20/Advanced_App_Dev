@@ -19,7 +19,7 @@ const Contact = () => {
                                 data-original="#000000" />
                         </svg>
                         <a href="javascript:void(0)" class="text-black text-sm ml-3">
-                            <strong>info@example.com</strong>
+                            <strong>corpify@gmail.com</strong>
                         </a>
                     </li>
                     <li class="flex items-center">

@@ -1,6 +1,47 @@
 import React from 'react'
+import { useState } from 'react'
 
 const UserBookings = () => {
+    const [showForm, setShowForm] = useState(false);
+  const [paymentMode, setPaymentMode] = useState('');
+  const [amount, setAmount] = useState('');
+  const [selectedBooking, setSelectedBooking] = useState(1);
+
+  const handlePayNow = (bookingId) => {
+    setShowForm(true);
+    setSelectedBooking(bookingId);
+};
+
+  const handleCancel = () => {
+    setShowForm(false);
+    setSelectedBooking(null);
+    // Reset form fields if needed
+    setPaymentMode('');
+    setAmount('');
+  };
+
+  const handlePaymentModeChange = (e) => {
+    setPaymentMode(e.target.value);
+  };
+
+  const handleAmountChange = (e) => {
+    setAmount(e.target.value);
+  };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Handle form submission here, for example, sending payment details to server
+        console.log('Payment Mode:', paymentMode);
+        console.log('Amount:', amount);
+        console.log('Selected Booking:', selectedBooking);
+        // After submission, you can close the form
+        setShowForm(false);
+        setSelectedBooking(null);
+        // Reset form fields if needed
+        setPaymentMode('');
+        setAmount('');
+      };
+    
   return (
     <div>     
 
@@ -71,8 +112,13 @@ const UserBookings = () => {
                         </td>
                        
                         <td className="px-6 py-4">
-                            <a href="#" className="font-medium text-blue-600 hover:underline">Pay </a>
-                        </td>
+    {selectedBooking === 1 ? (
+        <button onClick={() => handlePayNow(1)} className='text-blue-900 font-bold'>Pay </button>
+    ) : (
+        // Placeholder text if the condition is not met
+        "N/A"
+    )}
+</td>
                     </tr>
                     <tr className="odd:bg-white even:bg-gray-50 border-b dark:border-gray-700">
                         <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
@@ -207,6 +253,44 @@ const UserBookings = () => {
                     </tbody>
             </table>
         </div>
+
+        {showForm && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <h2 className="text-xl font-semibold mb-4">Payment Form</h2>
+            <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+                <label htmlFor="paymentMode" className="block text-sm font-medium text-gray-700">
+                  Payment Mode
+                </label>
+                <input
+                  type="text"
+                  id="paymentMode"
+                  className="mt-1 p-2 border rounded-md w-full"
+                  value={paymentMode}
+                  onChange={handlePaymentModeChange}
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="amount" className="block text-sm font-medium text-gray-700">
+                  Amount
+                </label>
+                <input
+                  type="text"
+                  id="amount"
+                  className="mt-1 p-2 border rounded-md w-full"
+                  value={amount}
+                  onChange={handleAmountChange}
+                />
+              </div>
+              <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mr-4" type="submit">Pay</button>
+<button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" type="button" onClick={handleCancel}>Cancel</button>
+            </form>
+          </div>
+        </div>
+      )}
+
+        
         
     </div>
   )

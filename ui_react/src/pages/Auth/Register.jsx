@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { Toaster } from 'react-hot-toast'
+import register_vector from '../../assets/Images/register_vector.jpeg'
 
 const Register = () => {
 
@@ -82,12 +83,16 @@ const Register = () => {
      
 
   return (
-    <div>
-     <section class="bg-gray-50 dark:bg-gray-900">
-        <br/>
-  <div class="flex flex-col items-center px-6 py-2 mx-auto md:h-screen lg:py-0">
+    <div className="flex">
       
-      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            {/* Left side vector image */}
+            <div className="hidden md:block w-[40%]">
+                <img src={register_vector}/>
+            </div>
+     <section class="bg-gray-50 dark:bg-gray-900 flex justify-center items-center w-[50%]">
+        <br/>
+        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                    <div className="space-y-2 md:space-y-5 sm:p-8">
           <div class=" space-y-2 md:space-y-5 sm:p-8">
               <h1 class="text-center text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                   Sign Up

@@ -42,10 +42,10 @@ const AdminLeftbar = () => {
     <div>
        <div className='w-full lg:w-[15vw] bg-blue-50/20 shadow-md shadow-blue-500 flex flex-col'>
                 
-                <div className='h-screen lg:h-[91vh] flex flex-col gap-1'>
+                <div className='h-screen lg:h-[105vh] flex flex-col gap-1'>
                     {
                         UserLinks.map((link, index) => (
-                            <NavLink key={index} to={link.path} className='p-4 border-b-4 border-blue-400 font-bold mt-2'
+                            <NavLink key={index} to={link.path} className='p-4 border-b-2 font-bold mt-2'
                             activeClassName='border-orange-600 mb-2'>
                                 <span className='flex flex-row items-center justify-start h-full w-full gap-2'>
                                     {React.createElement(link.icon, { size: 20 })}
