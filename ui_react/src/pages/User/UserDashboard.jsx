@@ -7,6 +7,7 @@ import payment_icon from '../../assets/Images/payment_icon.gif'
 const UserDashboard = () => {
   const userEmail = localStorage.getItem('email');
   return (
+    <div className='bg-blue-200'>
     <div className="grid grid-cols-4 gap-8 mx-auto max-w-7xl">
       <br/>
       <div className="col-span-4 text-center">
@@ -19,7 +20,7 @@ const UserDashboard = () => {
       </div>
 
     {/* First Card */}
-    <div className="max-w-xs rounded overflow-hidden shadow-lg">
+    <div className=" ml-3 max-w-[250px] rounded overflow-hidden shadow-lg bg-white">
       <div className="flex items-center justify-center">
         <img className="w-[17%]" src={event_icon} alt="event" />
       </div>
@@ -29,7 +30,7 @@ const UserDashboard = () => {
       </div>
     </div>
     {/* Second Card */}
-    <div className="max-w-xs rounded overflow-hidden shadow-lg">
+    <div className="max-w-xs rounded overflow-hidden shadow-lg bg-white">
       <div className="flex items-center justify-center">
         <img className="w-[17%]" src={booking_icon} alt="event" />
       </div>
@@ -39,7 +40,7 @@ const UserDashboard = () => {
       </div>
     </div>
     {/* Third Card */}
-    <div className="max-w-xs rounded overflow-hidden shadow-lg">
+    <div className="max-w-xs rounded overflow-hidden shadow-lg bg-white">
       <div className="flex items-center justify-center">
         <img className="w-[17%]" src={payment_icon} alt="event" />
       </div>
@@ -49,7 +50,7 @@ const UserDashboard = () => {
       </div>
     </div>
     {/* Fourth Card */}
-    <div className="max-w-xs rounded overflow-hidden shadow-lg">
+    <div className="max-w-[235px] rounded overflow-hidden shadow-lg bg-white">
       <div className="flex items-center justify-center">
         <img className="w-[17%]" src={userevent_icon} alt="event" />
       </div>
@@ -59,7 +60,8 @@ const UserDashboard = () => {
       </div>
     </div>
   </div>
-    
+  <br/><br/><br/><br/>
+  </div>
   )
 }
 

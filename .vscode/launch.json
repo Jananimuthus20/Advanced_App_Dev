@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CorpifyApplication<corpify>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.janani.corpify.CorpifyApplication",
+            "projectName": "corpify",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

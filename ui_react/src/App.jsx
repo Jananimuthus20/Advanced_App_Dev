@@ -5,7 +5,7 @@ const Contact =lazy (()=> import('./pages/Contact'))
 import Login from './pages/Auth/Login'
 import Register from './pages/Auth/Register'
 import Weblayout from './layouts/Weblayout'
-import Terms from './pages/Terms'
+const Terms = lazy(()=> import('./pages/Terms'))
 
 import AdminLayout from './layouts/AdminLayout'
 import AdminDashboard from './pages/Admin/AdminDashboard'
@@ -22,13 +22,15 @@ import UserEvents from './pages/User/UserEvents'
 import UserBookings from './pages/User/UserBookings'
 import UserPayments from './pages/User/UserPayments'
 import UserProfile from './pages/User/UserProfile'
+import Loader from './components/Public/Loader'
+import Err404 from './pages/Err404'
 
 
 const App = () => {
   return (
     <>
      <BrowserRouter>
-     <Suspense fallback='Loading..'>
+     <Suspense fallback={<Loader/>}>
      <Routes>
       <Route element={<Weblayout/>}> 
       <Route path='/' element={<Home/>}/>
@@ -55,6 +57,7 @@ const App = () => {
       <Route path='/user/payments' element={<UserPayments/>}/>
       <Route path='/user/profile' element={<UserProfile/>}/>
       </Route>
+      <Route path='*'element={<Err404/>}/>
 
      </Routes>
      </Suspense>

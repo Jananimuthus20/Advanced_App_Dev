@@ -83,6 +83,7 @@ const Register = () => {
      
 
   return (
+    <>
     <div className="flex">
       
             {/* Left side vector image */}
@@ -168,9 +169,10 @@ const Register = () => {
       </div>
   </div>
 </section>
-<br/><br/>
+<br/>
     </div>
-    
+    <br/>
+    </>
   )
 }
 
