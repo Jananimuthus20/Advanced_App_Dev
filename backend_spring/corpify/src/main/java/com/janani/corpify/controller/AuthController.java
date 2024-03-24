@@ -2,6 +2,7 @@ package com.janani.corpify.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.janani.corpify.api.Api;
 import com.janani.corpify.dto.request.LoginRequest;
 import com.janani.corpify.dto.request.RegisterRequest;
 import com.janani.corpify.service.AuthService;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping(Api.AUTH)
 @RequiredArgsConstructor
 @Tag(name = "Authentication", description = "Endpoints for user authentication")
 
