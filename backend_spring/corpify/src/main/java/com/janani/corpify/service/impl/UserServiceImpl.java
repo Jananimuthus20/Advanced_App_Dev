@@ -11,6 +11,7 @@ import com.janani.corpify.dto.request.UserRequest;
 import com.janani.corpify.dto.response.UserResponse;
 import com.janani.corpify.enums.Role;
 import com.janani.corpify.model.User;
+import com.janani.corpify.repository.JwtRepo;
 import com.janani.corpify.repository.UserRepo;
 import com.janani.corpify.service.UserService;
 
@@ -24,6 +25,8 @@ public class UserServiceImpl implements UserService{
     @Autowired
 	UserRepo userRepository; 
 	private final PasswordEncoder passwordEncoder;
+	@Autowired
+	JwtRepo jwtRepository;
 	
 	
 	
@@ -35,7 +38,6 @@ public class UserServiceImpl implements UserService{
                 .map(this::mapUserToUserResponse)
                 .collect(Collectors.toList());
 	}
-	
 	
 	
 	public UserResponse updateUser(UserRequest request, Long user_id) {
@@ -62,8 +64,15 @@ public class UserServiceImpl implements UserService{
 	
 	public boolean deleteUser(Long id)
 	{
-		userRepository.deleteById(id);
-		return true;
+		User user = userRepository.findByUid(id);
+
+        if (user != null) {
+            jwtRepository.deleteByUserUid(id);
+            userRepository.deleteByUid(id);
+            return true;
+        } else {
+            return false;
+        }
 	}
 	
 	private UserRequest mapUserToUserRequest(User user) {
