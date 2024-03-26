@@ -27,9 +27,7 @@ public class UserServiceImpl implements UserService{
 	private final PasswordEncoder passwordEncoder;
 	@Autowired
 	JwtRepo jwtRepository;
-	
-	
-	
+		
 	public List<UserResponse> getAllUsers()
 	{
 		List<User> userList = userRepository.findAll();
