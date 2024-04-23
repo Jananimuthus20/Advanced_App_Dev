@@ -3,11 +3,13 @@ import React from 'react'
 const AdminBookings = () => {
   return (
     <div>
-      Bookings made are listed below
+        <br/>
+        <h1 className='text-2xl text-center font-bold text-blue-800'>All the Bookings made are listed below</h1><br/>
+      
 
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-4">
             <table className="w-full text-sm text-left rtl:text-right text-black">
-                <thead className="text-xs text-white uppercase bg-blue-600 dark:text-white">
+                <thead className="text-xs text-white uppercase bg-sky-500 dark:text-white">
                     <tr>
                         <th scope="col" className="px-2 py-3">
                             Booking ID
@@ -43,7 +45,7 @@ const AdminBookings = () => {
                 </thead>
                 <tbody>
                     {/* Sample data rows */}
-                    <tr className="bg-white-500 border-b border-blue-400">
+                    <tr className="bg-cyan-100 border-b border-blue-400">
                         <td className="px-6 py-4">1</td>
                         <td className="px-6 py-4">2</td>
                         <td className="px-6 py-4">Janani</td>
@@ -61,7 +63,7 @@ const AdminBookings = () => {
                         <td className="px-6 py-4">$599.00</td>
                     </tr>
                     {/* Add more rows with similar structure */}
-                    <tr className="bg-white-500 border-b border-blue-400">
+                    <tr className="bg-cyan-100 border-b border-blue-400">
                         <td className="px-6 py-4">2</td>
                         <td className="px-6 py-4">3</td>
                         <td className="px-6 py-4">Deeksha</td>
@@ -78,7 +80,7 @@ const AdminBookings = () => {
                         <td className="px-6 py-4">40</td>
                         <td className="px-6 py-4">$1999.00</td>
                     </tr>
-                    <tr className="bg-white-500 border-b border-blue-400">
+                    <tr className="bg-cyan-100 border-b border-blue-400">
                         <td className="px-6 py-4">3</td>
                         <td className="px-6 py-4">5</td>
                         <td className="px-6 py-4">Deepak</td>

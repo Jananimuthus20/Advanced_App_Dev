@@ -5,8 +5,10 @@ const UserPayments = () => {
     <>
     
 <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <br/>
+<h1 className='text-2xl text-center font-bold text-blue-800'>PAYMENT DETAILS</h1><br/>
     <table className="w-full text-sm text-left rtl:text-right text-gray-900 dark:text-black-400 ">
-        <thead className="text-sm text-white uppercase bg-blue-500 dark:bg-blue-600 dark:text-white">
+        <thead className="text-sm text-blue-800  uppercase bg-cyan-300 dark:text-indigo-950">
             <tr>
                 <th scope="col" className="px-6 py-3">
                     Payment Id
@@ -27,7 +29,7 @@ const UserPayments = () => {
             </tr>
         </thead>
         <tbody>
-            <tr className="odd:bg-white even:bg-gray-50 border-b dark:border-gray-700">
+            <tr className="odd:bg-blue even:bg-blue-200 border-b dark:border-gray-700">
                 <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
                    1
                 </th>

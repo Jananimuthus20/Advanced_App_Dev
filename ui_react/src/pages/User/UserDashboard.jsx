@@ -7,20 +7,20 @@ import payment_icon from '../../assets/Images/payment_icon.gif'
 const UserDashboard = () => {
   const userEmail = localStorage.getItem('email');
   return (
-    <div className='bg-blue-200'>
+    <div className='bg-blue-100'>
     <div className="grid grid-cols-4 gap-8 mx-auto max-w-7xl">
       <br/>
       <div className="col-span-4 text-center">
          {userEmail && (
-           <p className="text-lg font-bold text-gray-600">
+           <p className="text-lg font-bold text-black-600">
              Welcome back, {userEmail}!<br/><br/>
               Get ready to manage your bookings, payments, and events with ease. 
             </p>
           )}
       </div>
-
     {/* First Card */}
     <div className=" ml-3 max-w-[250px] rounded overflow-hidden shadow-lg bg-white">
+    <br/>
       <div className="flex items-center justify-center">
         <img className="w-[17%]" src={event_icon} alt="event" />
       </div>
@@ -31,6 +31,7 @@ const UserDashboard = () => {
     </div>
     {/* Second Card */}
     <div className="max-w-xs rounded overflow-hidden shadow-lg bg-white">
+    <br/>
       <div className="flex items-center justify-center">
         <img className="w-[17%]" src={booking_icon} alt="event" />
       </div>
@@ -41,6 +42,7 @@ const UserDashboard = () => {
     </div>
     {/* Third Card */}
     <div className="max-w-xs rounded overflow-hidden shadow-lg bg-white">
+    <br/>
       <div className="flex items-center justify-center">
         <img className="w-[17%]" src={payment_icon} alt="event" />
       </div>
@@ -51,6 +53,7 @@ const UserDashboard = () => {
     </div>
     {/* Fourth Card */}
     <div className="max-w-[235px] rounded overflow-hidden shadow-lg bg-white">
+    <br/>
       <div className="flex items-center justify-center">
         <img className="w-[17%]" src={userevent_icon} alt="event" />
       </div>

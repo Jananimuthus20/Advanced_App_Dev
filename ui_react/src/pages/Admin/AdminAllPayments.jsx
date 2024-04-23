@@ -4,10 +4,11 @@ const AdminAllPayments = () => {
   return (
     <div>
       <>
-    
+      <br/>
+      <h1 className='text-2xl text-center font-bold text-blue-800'>All the Payments made by the users</h1><br/>
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left rtl:text-right text-gray-900 dark:text-black-400 ">
-            <thead className="text-sm text-gray-700 uppercase bg-blue-300 dark:bg-blue-600 dark:text-white">
+            <thead className="text-sm text-white uppercase bg-sky-500 dark:bg-blue-600 dark:text-white">
                 <tr>
                     <th scope="col" className="px-6 py-3">
                         Payment Id
@@ -34,7 +35,7 @@ const AdminAllPayments = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr className="odd:bg-white even:bg-gray-50 border-b dark:border-gray-700">
+                <tr className=" border-b border-blue-400 bg-cyan-100">
                     <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
                        1
                     </th>
@@ -57,7 +58,7 @@ const AdminAllPayments = () => {
                         Credit
                     </td>
                 </tr>
-                <tr className="odd:bg-white even:bg-gray-50 border-b dark:border-gray-700">
+                <tr className="bg-cyan-100 border-b border-blue-400">
                     <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
                        2
                     </th>
@@ -80,7 +81,7 @@ const AdminAllPayments = () => {
                         Online Banking
                     </td>
                 </tr>
-                <tr className="odd:bg-white even:bg-gray-50 border-b dark:border-gray-700">
+                <tr className="bg-cyan-100 border-b border-blue-400">
                     <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
                        3
                     </th>
@@ -103,7 +104,7 @@ const AdminAllPayments = () => {
                         Cash
                     </td>
                 </tr>
-                <tr className="odd:bg-white even:bg-gray-50 border-b dark:border-gray-700">
+                <tr className="bg-cyan-100 border-b border-blue-400">
                     <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
                        4
                     </th>

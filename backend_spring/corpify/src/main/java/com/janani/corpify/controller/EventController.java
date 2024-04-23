@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RestController
 @RequestMapping("/api/event/")
 @RequiredArgsConstructor
-@Tag(name = "Event", description = "Endpoints for user authentication")
+@Tag(name = "Event", description = "Endpoints for user Events")
 public class EventController {
     private final EventService eventService;
     @PostMapping("/saveEvent")
